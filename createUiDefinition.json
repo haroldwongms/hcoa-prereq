@@ -14,15 +14,10 @@
 			},
 			"osPlatform": "Linux"
 		}, {
-			"name": "adminPassword",
-			"type": "Microsoft.Compute.CredentialsCombo",
-			"label": {
-				"authenticationType": "Authentication Type",
-				"sshPublicKey": "SSH Public Key for VM Admin User"
-			},
-			"toolTip": {
-				"sshPublicKey": "SSH Public Key for the VM Admin User."
-			},
+			"name": "ManagementSubnet",
+			"type": "Microsoft.Common.TextBox",
+			"label": "Management Subnet",
+			"toolTip": "For the management subnet, a CIDR of /27 or more is required. This subnet is for IP addresses used by the VMs involved in management activities of the pod itself.",
 			"constraints": {
 				"required": true
 			},
