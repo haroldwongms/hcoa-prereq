@@ -51,6 +51,20 @@
         "description": "Subnet 2 Name"
       }
     },
+    "subnet3Prefix": {
+      "type": "string",
+      "defaultValue": "10.0.2.0/24",
+      "metadata": {
+        "description": "Subnet 3 Prefix"
+      }
+    },
+    "subnet3Name": {
+      "type": "string",
+      "defaultValue": "Subnet3",
+      "metadata": {
+        "description": "Subnet 3 Name"
+      }
+    },
     "location": {
       "type": "string",
       "defaultValue": "[resourceGroup().location]",
@@ -82,6 +96,12 @@
             "name": "[parameters('subnet2Name')]",
             "properties": {
               "addressPrefix": "[parameters('subnet2Prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('subnet3Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet3Prefix')]"
             }
           }
         ]
