@@ -35,10 +35,10 @@
           "hideExisting": true
         },
         "subnets": {
-          "subnet1": {
+          "mgmtSubnet": {
             "label": "Management subnet",
             "defaultValue": {
-              "name": "subnet-1",
+              "name": "mgmtsubnet",
               "addressPrefixSize": "/24"
             },
             "constraints": {
