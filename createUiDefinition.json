@@ -1,36 +1,36 @@
 {
-	"$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json",
-	"handler": "Microsoft.Azure.CreateUIDef",
-	"version": "0.1.2-preview",
-	"parameters": {
-		"basics": [{
-		}],
-		"steps": [{
-			"name": "infrastructureSettings",
-			"label": "Infrastructure Settings",
-			"subLabel": {
-				"preValidation": "Configure Infrastructure Settings",
-				"postValidation": "Done"
-			},
-			"bladeTitle": "Horizon Cloud on Azure Prerequisites",
-			"elements": [{
-				"name": "virtualNetwork",
-				"type": "Microsoft.Network.VirtualNetworkCombo",
-				"label": {
+  "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json",
+  "handler": "Microsoft.Azure.CreateUIDef",
+  "version": "0.1.2-preview",
+  "parameters": {
+    "basics": [{
+    }],
+    "steps": [{
+      "name": "infrastructureSettings",
+      "label": "Infrastructure Settings",
+      "subLabel": {
+        "preValidation": "Configure Infrastructure Settings",
+        "postValidation": "Done"
+      },
+      "bladeTitle": "Horizon Cloud on Azure Prerequisites",
+      "elements": [{
+        "name": "virtualNetwork",
+        "type": "Microsoft.Network.VirtualNetworkCombo",
+        "label": {
           "virtualNetwork": "Virtual network",
           "subnets": "Subnets"
         },
-				"defaultValue": {
+        "defaultValue": {
           "name": "vnet01",
           "addressPrefixSize": "/16"
         },
-				"toolTip": {
+        "toolTip": {
           "virtualNetwork": "",
           "subnets": ""
         },
-				"constraints": {
+        "constraints": {
           "minAddressPrefixSize": "/16"
-				},
+        },
         "options": {
           "hideExisting": true
         },
@@ -61,15 +61,15 @@
           }
         },
         "visible": true
-			}]
-		}],
-		"outputs": {
-			"vmAnsibleTowerUsername": "[basics('vmAnsibleTowerUsername')]",
-			"sshKeyData": "[basics('adminPassword').sshPublicKey]",
-			"vmSize": "[steps('infrastructureSettings').vmSize]",
-			"vmTowerName": "[steps('infrastructureSettings').vmTowerName]",
-			"ansibleTowerAdminPassword": "[steps('ansibleTowerSettings').ansibleTowerAdminPassword]",
-			"ansibleTowerDatabasePassword": "[steps('ansibleTowerSettings').ansibleTowerDatabasePassword]"
-		}
-	}
+        }]
+    }],
+    "outputs": {
+      "vmAnsibleTowerUsername": "[basics('vmAnsibleTowerUsername')]",
+      "sshKeyData": "[basics('adminPassword').sshPublicKey]",
+      "vmSize": "[steps('infrastructureSettings').vmSize]",
+      "vmTowerName": "[steps('infrastructureSettings').vmTowerName]",
+      "ansibleTowerAdminPassword": "[steps('ansibleTowerSettings').ansibleTowerAdminPassword]",
+      "ansibleTowerDatabasePassword": "[steps('ansibleTowerSettings').ansibleTowerDatabasePassword]"
+    }
+  }
 }
