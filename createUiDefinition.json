@@ -35,26 +35,38 @@
           "hideExisting": true
         },
         "subnets": {
-          "mgmtSubnet": {
-            "label": "Management subnet",
+          "managementSubnet": {
+            "label": "Create management subnet - This /27 subnet is for IP addresses needed by the management pod",
             "defaultValue": {
-              "name": "mgmtsubnet",
-              "addressPrefixSize": "/24"
+              "name": "managementSubnet",
+              "addressPrefixSize": "/27"
             },
             "constraints": {
-              "minAddressPrefixSize": "/24",
+              "minAddressPrefixSize": "/27",
               "minAddressCount": 12,
               "requireContiguousAddresses": true
             }
           },
-          "subnet2": {
-            "label": "Second subnet",
+          "desktopSubnet": {
+            "label": "Create primary desktop or tenant subnet - This /27 or more subnet is for the desktops or RDSH/multisession servers.",
             "defaultValue": {
-              "name": "subnet-2",
+              "name": "desktopSubnet",
               "addressPrefixSize": "/26"
             },
             "constraints": {
               "minAddressPrefixSize": "/26",
+              "minAddressCount": 8,
+              "requireContiguousAddresses": true
+            }
+         },
+          "DMZSubnet": {
+            "label": "Create front-end DMZ subnet - This /28 or more subnet is for the Unified Access Gateway to communicate with the external gateway's load balancer.",
+            "defaultValue": {
+              "name": "DMZSubnet",
+              "addressPrefixSize": "/28"
+            },
+            "constraints": {
+              "minAddressPrefixSize": "/28",
               "minAddressCount": 8,
               "requireContiguousAddresses": true
             }
