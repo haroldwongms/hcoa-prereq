@@ -90,8 +90,11 @@
     "outputs": {
       "virtualNetwork": "[steps('infrastructureSettings').virtualNetwork.name]",
       "managementSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.managementSubnet.name]",
+      "managementAddress": "[steps('infrastructureSettings').virtualNetwork.subnets.managementSubnet.addressPrefix]",
       "desktopSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.desktopSubnet.name]",
-      "DMZSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.DMZSubnet.name]"  
+      "desktopAddress": "[steps('infrastructureSettings').virtualNetwork.subnets.desktopSubnet.addressPrefix]",
+      "DMZSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.DMZSubnet.name]",  
+      "DMZAddress": "[steps('infrastructureSettings').virtualNetwork.subnets.DMZSubnet.addressPrefix]"  
     }
   }
 }
