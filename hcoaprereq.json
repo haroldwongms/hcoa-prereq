@@ -9,60 +9,60 @@
     }
   },
   "parameters": {
-    "vnetName": {
+    "virtualNetwork": {
       "type": "string",
-      "defaultValue": "VNet1",
+      "defaultValue": "",
       "metadata": {
-        "description": "VNet name"
+        "description": ""
       }
     },
-    "vnetAddressPrefix": {
+    "virtualAddress": {
       "type": "string",
-      "defaultValue": "10.0.0.0/16",
+      "defaultValue": "",
       "metadata": {
-        "description": "Address prefix"
+        "description": ""
       }
     },
-    "subnet1Prefix": {
+    "managementSubnet": {
       "type": "string",
-      "defaultValue": "10.0.0.0/24",
+      "defaultValue": "",
       "metadata": {
-        "description": "Subnet 1 Prefix"
+        "description": ""
       }
     },
-    "subnet1Name": {
+    "managementAddress": {
       "type": "string",
-      "defaultValue": "Subnet1",
+      "defaultValue": "",
       "metadata": {
-        "description": "Subnet 1 Name"
+        "description": ""
       }
     },
-    "subnet2Prefix": {
+    "desktopSubnet": {
       "type": "string",
-      "defaultValue": "10.0.1.0/24",
+      "defaultValue": "",
       "metadata": {
-        "description": "Subnet 2 Prefix"
+        "description": ""
       }
     },
-    "subnet2Name": {
+    "desktopAddress": {
       "type": "string",
-      "defaultValue": "Subnet2",
+      "defaultValue": "",
       "metadata": {
-        "description": "Subnet 2 Name"
+        "description": ""
       }
     },
-    "subnet3Prefix": {
+    "dmzSubnet": {
       "type": "string",
-      "defaultValue": "10.0.2.0/24",
+      "defaultValue": "",
       "metadata": {
-        "description": "Subnet 3 Prefix"
+        "description": ""
       }
     },
-    "subnet3Name": {
+    "dmzAddress": {
       "type": "string",
-      "defaultValue": "Subnet3",
+      "defaultValue": "",
       "metadata": {
-        "description": "Subnet 3 Name"
+        "description": ""
       }
     },
     "location": {
@@ -77,31 +77,31 @@
     {
       "type": "Microsoft.Network/virtualNetworks",
       "apiVersion": "2020-06-01",
-      "name": "[parameters('vnetName')]",
+      "name": "[parameters('virtualNetwork')]",
       "location": "[parameters('location')]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
-            "[parameters('vnetAddressPrefix')]"
+            "[parameters('virtualAddress')]"
           ]
         },
         "subnets": [
           {
-            "name": "[parameters('subnet1Name')]",
+            "name": "[parameters('managementSubnet')]",
             "properties": {
-              "addressPrefix": "[parameters('subnet1Prefix')]"
+              "addressPrefix": "[parameters('managementSubnetAddress')]"
             }
           },
           {
-            "name": "[parameters('subnet2Name')]",
+            "name": "[parameters('desktopSubnet')]",
             "properties": {
-              "addressPrefix": "[parameters('subnet2Prefix')]"
+              "addressPrefix": "[parameters('desktopAddress')]"
             }
           },
           {
-            "name": "[parameters('subnet3Name')]",
+            "name": "[parameters('dmzSubnet')]",
             "properties": {
-              "addressPrefix": "[parameters('subnet3Prefix')]"
+              "addressPrefix": "[parameters('dmzAddress')]"
             }
           }
         ]
