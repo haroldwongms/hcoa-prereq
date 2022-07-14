@@ -17,7 +17,7 @@
         "name": "virtualNetwork",
         "type": "Microsoft.Network.VirtualNetworkCombo",
         "label": {
-          "virtualNetwork": "Virtual network",
+          "virtualNetwork": "Virtual network - Create management, primary and DMZ on the same VNet",
           "subnets": "Subnets"
         },
         "defaultValue": {
@@ -40,7 +40,11 @@
             "defaultValue": {
               "name": "managementSubnet",
               "addressPrefixSize": "/27"
-            },
+         },
+         "toolTip": {
+          "virtualNetwork": "",
+          "subnets": ""
+         },
             "constraints": {
               "minAddressPrefixSize": "/27",
               "minAddressCount": 12,
@@ -48,10 +52,14 @@
             }
           },
           "desktopSubnet": {
-            "label": "Create primary desktop or tenant subnet - This /27 or more subnet is for the desktops or RDSH/multisession servers.",
+            "label": "Create primary subnet - This /27 or more subnet is for the desktops or RDSH/multisession servers along with pod manager and Unified Access Gateways on the same VNet.",
             "defaultValue": {
               "name": "desktopSubnet",
               "addressPrefixSize": "/27"
+            },
+           "toolTip": {
+            "virtualNetwork": "For production environments, a CIDR of /24 to /21 is recommended (256 addresses to 2048 addresses)",
+            "subnets": ""
             },
             "constraints": {
               "minAddressPrefixSize": "/27",
@@ -64,6 +72,10 @@
             "defaultValue": {
               "name": "DMZSubnet",
               "addressPrefixSize": "/28"
+            },
+            "toolTip": {
+            "virtualNetwork": "",
+            "subnets": ""
             },
             "constraints": {
               "minAddressPrefixSize": "/28",
