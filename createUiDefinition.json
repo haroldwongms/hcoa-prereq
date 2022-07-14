@@ -67,7 +67,7 @@
               "requireContiguousAddresses": true
             }
          },
-          "DMZSubnet": {
+          "dmzSubnet": {
             "label": "Create front-end DMZ subnet - This /28 or more subnet is for the Unified Access Gateway to communicate with the external gateway's load balancer.",
             "defaultValue": {
               "name": "DMZSubnet",
@@ -93,8 +93,8 @@
       "managementAddress": "[steps('infrastructureSettings').virtualNetwork.subnets.managementSubnet.addressPrefix]",
       "desktopSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.desktopSubnet.name]",
       "desktopAddress": "[steps('infrastructureSettings').virtualNetwork.subnets.desktopSubnet.addressPrefix]",
-      "DMZSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.DMZSubnet.name]",  
-      "DMZAddress": "[steps('infrastructureSettings').virtualNetwork.subnets.DMZSubnet.addressPrefix]"  
+      "dmzSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.DMZSubnet.name]",  
+      "dmzAddress": "[steps('infrastructureSettings').virtualNetwork.subnets.DMZSubnet.addressPrefix]"  
     }
   }
 }
