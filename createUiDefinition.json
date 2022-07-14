@@ -89,6 +89,7 @@
     }],
     "outputs": {
       "virtualNetwork": "[steps('infrastructureSettings').virtualNetwork.name]",
+      "virtualAddress": "[steps('infrastructureSettings').virtualNetwork.addressPrefix]",
       "managementSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.managementSubnet.name]",
       "managementAddress": "[steps('infrastructureSettings').virtualNetwork.subnets.managementSubnet.addressPrefix]",
       "desktopSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.desktopSubnet.name]",
