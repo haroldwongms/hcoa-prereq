@@ -89,7 +89,7 @@
           {
             "name": "[parameters('managementSubnet')]",
             "properties": {
-              "addressPrefix": "[parameters('managementSubnetAddress')]"
+              "addressPrefix": "[parameters('managementAddress')]"
             }
           },
           {
