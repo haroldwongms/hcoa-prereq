@@ -51,10 +51,10 @@
             "label": "Create primary desktop or tenant subnet - This /27 or more subnet is for the desktops or RDSH/multisession servers.",
             "defaultValue": {
               "name": "desktopSubnet",
-              "addressPrefixSize": "/26"
+              "addressPrefixSize": "/27"
             },
             "constraints": {
-              "minAddressPrefixSize": "/26",
+              "minAddressPrefixSize": "/27",
               "minAddressCount": 8,
               "requireContiguousAddresses": true
             }
