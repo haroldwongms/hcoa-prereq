@@ -88,12 +88,10 @@
         }]
     }],
     "outputs": {
-      "vmAnsibleTowerUsername": "[basics('vmAnsibleTowerUsername')]",
-      "sshKeyData": "[basics('adminPassword').sshPublicKey]",
-      "vmSize": "[steps('infrastructureSettings').vmSize]",
-      "vmTowerName": "[steps('infrastructureSettings').vmTowerName]",
-      "ansibleTowerAdminPassword": "[steps('ansibleTowerSettings').ansibleTowerAdminPassword]",
-      "ansibleTowerDatabasePassword": "[steps('ansibleTowerSettings').ansibleTowerDatabasePassword]"
+      "virtualNetwork": "[steps('infrastructureSettings').virtualNetwork.name]",
+      "managementSubnet": "[steps('infrastructureSettings').subnets.managementSubnet.name]",
+      "desktopSubnet": "[steps('infrastructureSettings').subnets.desktopSubnet.name]",
+      "DMZSubnet": "[steps('infrastructureSettings').subnets.DMZSubnet.name]"  
     }
   }
 }
