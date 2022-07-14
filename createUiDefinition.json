@@ -89,9 +89,9 @@
     }],
     "outputs": {
       "virtualNetwork": "[steps('infrastructureSettings').virtualNetwork.name]",
-      "managementSubnet": "[steps('infrastructureSettings').subnets.managementSubnet.name]",
-      "desktopSubnet": "[steps('infrastructureSettings').subnets.desktopSubnet.name]",
-      "DMZSubnet": "[steps('infrastructureSettings').subnets.DMZSubnet.name]"  
+      "managementSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.managementSubnet.name]",
+      "desktopSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.desktopSubnet.name]",
+      "DMZSubnet": "[steps('infrastructureSettings').virtualNetwork.subnets.DMZSubnet.name]"  
     }
   }
 }
